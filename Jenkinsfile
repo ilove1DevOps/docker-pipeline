@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
-    stages {
-            stage('Checkout') {
-                steps {
-                // Perform build steps here
-                sh 'git branch: 'main', url: 'https://github.com/ilove1DevOps/docker-pipeline.git''
-            }
-        }
+    // stages {
+    //         stage('Checkout') {
+    //             steps {
+    //             // Perform build steps here
+    //             sh 'git branch: 'main', url: 'https://github.com/ilove1DevOps/docker-pipeline.git''
+    //         }
+    //     }
 
         stage('Build') {
             steps {
