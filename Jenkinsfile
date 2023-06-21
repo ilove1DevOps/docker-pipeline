@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
+            stage('Checkout') {
+                steps {
                 // Perform build steps here
                 sh 'git branch: 'main', url: 'https://github.com/ilove1DevOps/docker-pipeline.git''
             }
