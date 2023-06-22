@@ -31,3 +31,6 @@ USER jenkins
 <h3> Command to run </h3>
 
 ``` docker run -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v /Users/xs296-piydhi/Desktop/helm/jenkins:/var/jenkins_home jenkins-container-2 ```
+
+<h3> Inside the docker container </h3>
+``` docker exec -it --user root de84d6dfb33b  /bin/bash ```
