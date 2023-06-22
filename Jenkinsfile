@@ -1,21 +1,23 @@
 pipeline {
     agent any
-    environment {     
-    DOCKERHUB_CREDENTIALS= credentials('dockerhub')     
-} 
+
     stages {
         stage('Build') {
             steps {
+                // Build steps here
                 sh 'docker build -t piyushdhir121:i1 .'
             }
         }
 
-        stage('Push to Docker Hub') {
+        stage('Docker Login') {
             steps {
-                sh 'docker login -u docker login -u=$DOCKERHUB_CREDENTIALS --password-stdin'
-                sh 'docker push piyushdhir121:i1 '
-
+                withCredentials([usernamePassword(credentialsId: 'DOCKER_HUB_CREDENTIALS', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    sh "echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin"
+                }
             }
         }
+        
+        // Add more stages as needed
+        
     }
 }
