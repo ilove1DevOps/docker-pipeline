@@ -12,7 +12,7 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
-                sh 'docker login -u docker login -u=abbbb -p=ldo23825@omeie.com'
+                sh 'docker login -u docker login -u=$DOCKERHUB_CREDENTIALS --password-stdin'
                 sh 'docker push piyushdhir121:i1 '
 
             }
