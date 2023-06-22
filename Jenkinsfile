@@ -1,5 +1,6 @@
 pipeline {
     agent any {
+        stages {
         stage('Build') {
             steps {
                 // Perform test steps here
@@ -8,4 +9,4 @@ pipeline {
         }
     }
 }
-
+}
