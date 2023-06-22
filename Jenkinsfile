@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build steps here
-                sh 'docker build -t piyushdhir121:i1 .'
+                sh 'docker build -t abbbb/nginx-test:i1 .'
             }
         }
 
