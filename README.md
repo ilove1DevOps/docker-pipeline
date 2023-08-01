@@ -34,6 +34,8 @@ USER jenkins
 
 <h3>go inside jenkins container as a ```Root``` </h3>
 
+``` docker run --name jenkins-done-1 -p 8084:8080 -p 50002:50000 --mount type=bind,source="/home/piyush/Desktop/jenkins",destination="/var/jenkins_home" --mount type=bind,source="/var/run/docker.sock",destination="/var/run/docker.sock" --cpus=2 --memory=2g piyushdhir121/jenkins-server:latest```
+
 ```docker exec -it --user root de84d6dfb33b  /bin/bash```
 <h3>Inside the container </h3>
 ```chmod 777 var/run/docker.sock```
